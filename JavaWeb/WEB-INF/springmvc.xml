@@ -86,7 +86,8 @@
     <mvc:resources mapping="/js/before/**" location="/js/before/" />
     <mvc:resources mapping="/css/before/**" location="/css/before/" />
     <mvc:resources mapping="/font/**" location="/font/" />
-    <mvc:resources mapping="/img/**" location="/img/goods/" />
+    <mvc:resources mapping="/img/goods/**" location="/img/goods/" />
+     <mvc:resources mapping="/img/before/**" location="/img/before/" />
     
     <mvc:annotation-driven></mvc:annotation-driven>
     

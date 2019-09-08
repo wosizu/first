@@ -53,11 +53,11 @@
 						<div class="carousel-inner">
 							
 							<div class="carousel-item active">
-								<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/图片2.jpg" />
+								<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/图片2.jpg" />
 							</div>	
 							
 							<div class="carousel-item">
-								<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/图片1.jpg" />
+								<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/图片1.jpg" />
 							</div>
 							
 							
@@ -75,10 +75,10 @@
 						<div id="deam1" class="carousel slide col-md-6" data-ride="carousel">
 							<div id="deam1" class="carousel-inner">
 								<div class="carousel-item active">
-									<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/图片下1.jpg" />
+									<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/图片下1.jpg" />
 								</div>		
 								<div class="carousel-item">
-									<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/图片下4.jpg" />
+									<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/图片下4.jpg" />
 								</div>
 							</div>
 						</div>
@@ -87,10 +87,10 @@
 						<div id="deam2" class="carousel slide col-md-6" data-ride="carousel" >
 							<div class="carousel-inner">
 								<div class="carousel-item active">
-									<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/图片下1.jpg" />
+									<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/图片下1.jpg" />
 								</div>
 								<div class="carousel-item">
-									<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/图片下2.jpg"/>
+									<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/图片下2.jpg"/>
 								</div>
 							</div>
 						</div>
@@ -100,9 +100,9 @@
 				
 				
 				<div class="col-md-2">
-					<img class="img-fluid img-thumbnail " src="http://localhost:8080/JavaWeb/img/图片下5.jpg"/>
-					<img class="img-fluid img-thumbnail my-md-3" src="http://localhost:8080/JavaWeb/img/图片下6.jpg"/>
-					<img class="img-fluid img-thumbnail my-md-3" src="http://localhost:8080/JavaWeb/img/图片下5.jpg"/>
+					<img class="img-fluid img-thumbnail " src="http://localhost:8080/JavaWeb/img/goods/图片下5.jpg"/>
+					<img class="img-fluid img-thumbnail my-md-3" src="http://localhost:8080/JavaWeb/img/goods/图片下6.jpg"/>
+					<img class="img-fluid img-thumbnail my-md-3" src="http://localhost:8080/JavaWeb/img/goods/图片下5.jpg"/>
 				</div>
 				
 				
@@ -110,7 +110,7 @@
 					<div class="member">
 						<div class="row">
 							<div class="col-md-4"></div>
-							<img class="col-md-3 my-md-4 img-thumbnail" src="http://localhost:8080/JavaWeb/img/头像.jpg" />
+							<img class="col-md-3 my-md-4 img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/头像.jpg" />
 						</div>
 						<div class="row">
 							<div class="col-md-2"></div>
@@ -156,13 +156,13 @@
 			<div class="row">
 				<div class="col-md-2 row">
 					<div class="col-md-8">
-						<img class="img-fluid " src="http://localhost:8080/JavaWeb/img/有好货.png" />
+						<img class="img-fluid " src="http://localhost:8080/JavaWeb/img/goods/有好货.png" />
 					</div>
 				</div>
 				<div class="col-md-4"></div>
 				<div class="col-md-2 ">
 					<div class="col-md-8">
-						<img class="img-fluid " src="http://localhost:8080/JavaWeb/img/爱逛街.png" />
+						<img class="img-fluid " src="http://localhost:8080/JavaWeb/img/goods/爱逛街.png" />
 					</div>
 					
 				</div>
@@ -173,17 +173,17 @@
 			<div class="row goods_top my-md-3" >
 				<div class="col-md-6 row" >
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/商品1.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/商品1.webp" />
 						<h6>max破产要买的口红</h6>
 						<p>《破产姐妹》max最爱</p>
 					</div>
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/商品2.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/商品2.webp" />
 						<h6>Gogan 冰种玉镯</h6>
 						<p>极品冰种质地，视觉效果通</p>
 					</div>
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/商品3.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/商品3.webp" />
 						<h6>碎脂机，超快瘦身</h6>
 						<p>这个精美的碎脂机，不仅采</p>
 					</div>
@@ -191,15 +191,15 @@
 				
 				<div class="col-md-6 row " >
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/裙.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/裙.webp" />
 						<p><span class="iconfont icon-shuangyinhao"></span>&nbsp;&nbsp;裙</p>
 					</div>
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/地毯.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/地毯.webp" />
 						<p><span class="iconfont icon-shuangyinhao"></span>&nbsp;&nbsp;ins网红的家靠地毯就能撑起来</p>
 					</div>
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/梨花杯.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/梨花杯.webp" />
 						<p><span class="iconfont icon-shuangyinhao"></span>&nbsp;&nbsp;韩国潮牌梨花杯</p>
 					</div>
 				</div>
@@ -209,17 +209,17 @@
 			<div class="row goods_top" >
 				<div class="col-md-6 row">
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/商品7.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/商品7.webp" />
 						<h6>为小户型省空间</h6>
 						<p>北欧简约设计，为小户型</p>
 					</div>
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/商品8.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/商品8.webp" />
 						<h6>ZIIIRO手表</h6>
 						<p>采用现代设计，让时间显示</p>
 					</div>
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/商品9.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/商品9.webp" />
 						<h6>老铁，这是电吸门</h6>
 						<p>电吸门可以避免车门未关紧</p>
 					</div>
@@ -228,15 +228,15 @@
 				<div class="col-md-6 row" >
 					
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/粉地毯.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/粉地毯.webp" />
 						<p><span class="iconfont icon-shuangyinhao"></span>&nbsp;&nbsp;粉格小地毯 满足你的少女心</p>
 					</div>
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/椅子.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/椅子.webp" />
 						<p><span class="iconfont icon-shuangyinhao"></span>&nbsp;&nbsp;休闲角应该有把这样的椅子</p>
 					</div>
 					<div class="col-md-4">
-						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/首饰盒.webp" />
+						<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/首饰盒.webp" />
 						<p><span class="iconfont icon-shuangyinhao"></span>&nbsp;&nbsp;有了它 帮你解决首饰收纳难题</p>
 					</div>
 				</div>
@@ -250,7 +250,7 @@
 			<div class="row">
 				<div class="col-md-2 row">
 					<div class="col-md-8">
-						<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/抢购.png"/>
+						<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/抢购.png"/>
 					</div>
 					
 				</div>
@@ -259,7 +259,7 @@
 				<div class="col-md-4">
 					<div class="row">
 						<div class="col-md-6">
-							<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/抢购图片1.webp" />
+							<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/抢购图片1.webp" />
 						</div>
 						<div class="col-md-6">
 							<div class="row">
@@ -288,7 +288,7 @@
 				<div class="col-md-4">
 					<div class="row">
 						<div class="col-md-6">
-							<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/抢购图片2.webp" />
+							<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/抢购图片2.webp" />
 						</div>
 						<div class="col-md-6">
 							<div class="row">
@@ -316,7 +316,7 @@
 				<div class="col-md-4">
 					<div class="row">
 						<div class="col-md-6">
-							<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/抢购图片3.webp" />
+							<img class="img-fluid img-thumbnail" src="http://localhost:8080/JavaWeb/img/goods/抢购图片3.webp" />
 						</div>
 						<div class="col-md-6">
 							<div class="row">
@@ -360,10 +360,10 @@
 					</div>
 					<div class="row">
 						<div class="col-md-6">
-							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/腔调1.webp" />
+							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/腔调1.webp" />
 						</div>
 						<div class="col-md-6">
-							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/腔调2.webp" />
+							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/腔调2.webp" />
 						</div>
 					</div>
 				</div>
@@ -377,10 +377,10 @@
 					</div>
 					<div class="row">
 						<div class="col-md-6">
-							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/全球购1.webp" />
+							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/全球购1.webp" />
 						</div>
 						<div class="col-md-6">
-							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/全球购2.webp" />
+							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/全球购2.webp" />
 						</div>
 					</div>
 				</div>
@@ -393,10 +393,10 @@
 					</div>
 					<div class="row">
 						<div class="col-md-6">
-							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/魅力惠1.webp" />
+							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/魅力惠1.webp" />
 						</div>
 						<div class="col-md-6">
-							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/魅力惠2.webp" />
+							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/魅力惠2.webp" />
 						</div>
 					</div>
 					
@@ -415,19 +415,19 @@
 				<div class="col-md-6">
 					<div class="row">
 						<div class="col-md-6">
-							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/家具城.png" />
+							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/家具城.png" />
 						</div>
 						<div class="col-md-6 my-md-3">
 							<div class="row">亲宝贝</div>
 							<div class="row">
-								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/请宝贝.webp" />
-								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/袜子.webp" />
+								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/goods/请宝贝.webp" />
+								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/goods/袜子.webp" />
 							</div>
 							
 							<div class="row my-md-3">淘宝教育</div>
 							<div class="row">
-								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/淘宝教育1.webp" />
-								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/淘宝教育2.webp" />
+								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/goods/淘宝教育1.webp" />
+								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/goods/淘宝教育2.webp" />
 							</div>
 							
 						</div>
@@ -438,19 +438,19 @@
 					
 					<div class="row">
 						<div class="col-md-6">
-							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/拍卖.jpg" />
+							<img class="img-fluid" src="http://localhost:8080/JavaWeb/img/goods/拍卖.jpg" />
 						</div>
 						<div class="col-md-6 my-md-3">
 							<div class="row">淘宝动漫</div>
 							<div class="row">
-								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/淘宝动漫1.webp" />
-								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/淘宝动漫2.webp" />
+								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/goods/淘宝动漫1.webp" />
+								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/goods/淘宝动漫2.webp" />
 							</div>
 							
 							<div class="row my-md-3">淘宝文创</div>
 							<div class="row">
-								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/淘宝文创1.webp" />
-								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/淘宝文创2.webp" />
+								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/goods/淘宝文创1.webp" />
+								<img class="img-fluid col-md-6" src="http://localhost:8080/JavaWeb/img/goods/淘宝文创2.webp" />
 							</div>
 							
 						</div>

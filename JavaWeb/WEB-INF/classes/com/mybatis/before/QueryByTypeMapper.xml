@@ -5,7 +5,7 @@
 <mapper namespace="com.dao.before.QueryByTypeDao">
 
 	<select id="query" parameterType="Integer" resultType="com.entity.Goods">
-	    select * from goods where id=#{typeId}
+	    select * from goods where goodstype_id=#{typeId}
 	</select>
 	
 	
