@@ -1,0 +1,103 @@
+
+
+.nav-top{
+	background-color: #f5f5f5;
+	box-shadow: 1px 1px 1px gray;
+}
+
+.nav-top a:first-child{
+	margin-left: 30px;
+}
+
+.nav-top a:hover{
+	color: red;
+} 
+
+.nav-top a{
+	color: black;
+}
+
+.member{
+	height: 150px;
+	background-size: 100px;
+	background-image: url(http://localhost:8080/JavaWeb/img/goods/member背景图.png);
+	box-shadow: 1px 1px 1px #888888;
+}
+
+.member img{
+	
+	height: 44px;
+}
+
+.goods_top div{
+	height: 200px;
+	/* border: 1px solid red; */
+}
+.goods_top > div{
+	border-radius: 40px 40px 40px 40px;
+	
+	/* border-left: 20px solid lightgray;
+	border-right: 20px solid lightgray; */
+}
+
+.goods_top h6{
+	font-weight: 400;
+}
+.goods_top p{
+	font-weight: lighter;
+	font-size: 13px;
+}
+
+
+.goods_middle p:first-of-type{
+	text-align: center;
+	width: 100%;
+	color: red;
+}
+.goods_middle p:last-of-type{
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+	font-weight: 200;
+	margin-bottom: 4px;
+}
+
+.goods_middle del span{
+	color:darkgrey;
+}
+.goods_middle del{
+	margin-left: 50px;
+	color: darkgrey;
+}
+
+.goods_middle span{
+	color: red;
+}
+
+.goods_bottom > :first-child{
+	font-size: 20px;
+	font-style: normal;
+	color: #AD45Df;
+	border-bottom: 1px solid lightgray;
+}
+
+.goods_bottom > :nth-child(2) > div{
+	border-right: 1px solid lightgray;
+}
+
+.goods_realbottom > :first-child{
+	font-size: 20px;
+	font-style: normal;
+	color: #AD45Df;
+	border-bottom: 1px solid lightgray;
+}
+
+.goods_realbottom > :nth-child(2) > div{
+	border-right: 1px solid lightgray;
+}
+
+
+
+
+
+
