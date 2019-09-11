@@ -1,18 +1,15 @@
 package com.Test;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.junit.Test;
 import com.entity.Goods;
 
 public class TestBatis {
-	@Test
+
 	public void main() throws Exception {
 		
 		String resource="../mybatis/mybatis-config.xml";

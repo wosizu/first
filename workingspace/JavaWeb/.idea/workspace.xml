@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="99a24200-5272-47c5-85cd-0e7ba1bc1433" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/JavaWeb_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/artifacts/JavaWeb_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workingspace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workingspace.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaWeb.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Test/TestBatis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Test/TestBatis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/admin/AdminLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/admin/AdminLoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/admin/BaseAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/admin/BaseAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/admin/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/admin/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/before/ValidateCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/before/ValidateCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exception/AdminNotLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exception/AdminNotLoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exception/BeforeNotLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exception/BeforeNotLoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exception/LossInfoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exception/LossInfoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/admin/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/admin/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/admin/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/admin/NoticeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/admin/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/admin/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/admin/TypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/admin/TypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/admin/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/admin/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/before/QueryByType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/before/QueryByType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/MyMethodInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/MyMethodInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/MyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/MyUtil.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1QdKiU73l8m0Ic4iCuFmN1NXQOF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="99a24200-5272-47c5-85cd-0e7ba1bc1433" name="Default Changelist" comment="" />
+      <created>1568095161990</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568095161990</updated>
+      <workItem from="1568095173758" duration="711000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -21,20 +21,20 @@ import com.util.MyUtil;
 public class NoticeService {
 	@Autowired
 	NoticeDao dao;
-	
+
 	Notice notice;
 	HttpServletRequest request;
-	
-	//Í¨¹ıÕâ¸ö·½·¨À´µ÷ÓÃÆäËû¼¸¸öÔöÉ¾¸Ä²éµÄ·½·¨£¬ÕâÑù¿ÉÒÔ¼õÉÙContorllerÀàµÄ´úÂë£¬°ÑÅĞ¶Ï·½·¨µÄÂß¼­Ò²·ÅÔÚÕâÀï
+
+	//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è°ƒç”¨å…¶ä»–å‡ ä¸ªå¢åˆ æ”¹æŸ¥çš„æ–¹æ³•ï¼Œè¿™æ ·å¯ä»¥å‡å°‘Contorllerç±»çš„ä»£ç ï¼ŒæŠŠåˆ¤æ–­æ–¹æ³•çš„é€»è¾‘ä¹Ÿæ”¾åœ¨è¿™é‡Œ
 	public String baseMethod(HttpServletRequest request) throws Exception {
 		this.request = request;
-		//Í¨¹ıÕâ¸ö·½·¨À´½øĞĞ·Ç¿ÕÅĞ¶Ï£¬È»ºóÖ±½Óµ÷ÓÃ´ò°ügoodsµÄ·½·¨
+		//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è¿›è¡Œéç©ºåˆ¤æ–­ï¼Œç„¶åç›´æ¥è°ƒç”¨æ‰“åŒ…goodsçš„æ–¹æ³•
 		this.ensureNotEmpty(request);
-		//Í¨¹ı·´ÉäÀ´µ÷ÓÃ·½·¨£¬ÕâÑùÀ´¼õÉÙif else
+		//é€šè¿‡åå°„æ¥è°ƒç”¨æ–¹æ³•ï¼Œè¿™æ ·æ¥å‡å°‘if else
 		String jsp = (String)this.getClass().getMethod(request.getParameter("method")+"Notice", Notice.class).invoke(this, this.notice);
 		return jsp;
 	}
-	
+
 	public String addNotice(Notice notice) {
 		try {
 			if(notice.getId() == 0 || notice.getTime() == null || notice.getTitle() == null || notice.getContent() == null) {
@@ -42,30 +42,30 @@ public class NoticeService {
 			}
 			int changed = dao.addNotice(notice);
 			this.request.setAttribute("changed", changed);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			return ServiceUtil.PATH_ERROR;
 		}
-		
+
 	}
-	
+
 	public String deleteNotice(Notice notice) {
 		try{
-			
+
 			if(notice.getId() == 0) {
 				throw new LossInfoException();
 			}
 			int changed = dao.deleteNotice(notice.getId());
 			this.request.setAttribute("changed", changed);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e){
 			return ServiceUtil.PATH_ERROR;
 		}
-		
+
 	}
-//	
+	//
 	public String updateNotice(Notice notice) {
 		try {
 			if(notice.getId() == 0) {
@@ -73,13 +73,13 @@ public class NoticeService {
 			}
 			int changed = dao.updateNotice(notice);
 			this.request.setAttribute("changed", changed);
-			System.out.println("Ö´ĞĞÍê±Ï");
+			System.out.println("æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-//	
+	//
 	public String queryNotice(Notice Notice) {
 		try {
 			if(notice.getId() == 0) {
@@ -87,18 +87,18 @@ public class NoticeService {
 			}
 			notice = dao.queryNotice(notice.getId());
 			this.request.setAttribute("type", notice);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			e.printStackTrace();
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-//	
-	//ÏÂÃæÊÇ¹¤¾ß·½·¨
+	//
+	//ä¸‹é¢æ˜¯å·¥å…·æ–¹æ³•
 	public void packingNotice(int id,String title,String content) {
-		
-		
+
+
 		Notice notice = new Notice();
 		notice.setId(id);
 		notice.setTitle(title);
@@ -106,13 +106,13 @@ public class NoticeService {
 		notice.setTime(MyUtil.getTime());
 		this.notice = notice;
 	}
-	
+
 	public void ensureNotEmpty(HttpServletRequest request) throws Exception {
-		//ÏÈ»ñÈ¡ËùÓĞµÄ²ÎÊı
+		//å…ˆè·å–æ‰€æœ‰çš„å‚æ•°
 		String title=null;
 		String content = null;
 		int id = 0;
-		
+
 		if(!request.getParameter("id").equals("")) {
 			id = Integer.valueOf(request.getParameter("id"));
 		}
@@ -122,16 +122,16 @@ public class NoticeService {
 		if(!request.getParameter("content").equals("")) {
 			content = MyUtil.changeCoded(request.getParameter("content"));
 		}
-		
-		
+
+
 		System.out.println("id:"+id);
 		System.out.println("title:"+title);
 		System.out.println("content:"+content);
-		
+
 		packingNotice(id,title,content);
-		
+
 	}
-	
-	
-	
+
+
+
 }

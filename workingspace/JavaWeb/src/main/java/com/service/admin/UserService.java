@@ -13,56 +13,56 @@ import com.util.MyUtil;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	UserDao dao;
-	
+
 	User user;
-	
+
 	HttpServletRequest request;
-	
-	//Í¨¹ıÕâ¸ö·½·¨À´µ÷ÓÃÆäËû¼¸¸öÔöÉ¾¸Ä²éµÄ·½·¨£¬ÕâÑù¿ÉÒÔ¼õÉÙContorllerÀàµÄ´úÂë£¬°ÑÅĞ¶Ï·½·¨µÄÂß¼­Ò²·ÅÔÚÕâÀï
+
+	//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è°ƒç”¨å…¶ä»–å‡ ä¸ªå¢åˆ æ”¹æŸ¥çš„æ–¹æ³•ï¼Œè¿™æ ·å¯ä»¥å‡å°‘Contorllerç±»çš„ä»£ç ï¼ŒæŠŠåˆ¤æ–­æ–¹æ³•çš„é€»è¾‘ä¹Ÿæ”¾åœ¨è¿™é‡Œ
 	public String baseMethod(HttpServletRequest request) throws Exception {
 		this.request = request;
-		//Í¨¹ıÕâ¸ö·½·¨À´½øĞĞ·Ç¿ÕÅĞ¶Ï£¬È»ºóÖ±½Óµ÷ÓÃ´ò°ügoodsµÄ·½·¨
+		//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è¿›è¡Œéç©ºåˆ¤æ–­ï¼Œç„¶åç›´æ¥è°ƒç”¨æ‰“åŒ…goodsçš„æ–¹æ³•
 		this.ensureNotEmpty(request);
-		//Í¨¹ı·´ÉäÀ´µ÷ÓÃ·½·¨£¬ÕâÑùÀ´¼õÉÙif else
+		//é€šè¿‡åå°„æ¥è°ƒç”¨æ–¹æ³•ï¼Œè¿™æ ·æ¥å‡å°‘if else
 		String jsp = (String)this.getClass().getMethod(request.getParameter("method")+"User", User.class).invoke(this, this.user);
 		return jsp;
-		
+
 	}
-	
+
 	public String addUser(User user) {
 		int changed = dao.addUser(user);
 		this.request.setAttribute("changed", changed);
-		System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+		System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 		return ServiceUtil.PATH_RESULT;
 	}
-	
+
 	public String deleteUser(User user) {
 		int changed = dao.deleteUser(user.getId());
 		this.request.setAttribute("changed", changed);
-		System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+		System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 		return ServiceUtil.PATH_RESULT;
 	}
-	
+
 	public String updateUser(User user) {
 		int changed = dao.updateUser(user);
 		this.request.setAttribute("changed", changed);
-		System.out.println("Ö´ĞĞÍê±Ï");
+		System.out.println("æ‰§è¡Œå®Œæ¯•");
 		return ServiceUtil.PATH_RESULT;
 	}
-	
+
 	public String queryUser(User user) {
 		user = dao.queryUser(user.getId());
 		this.request.setAttribute("type", user);
-		System.out.println("ÕâÀïÀ´ÁË");
-		System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+		System.out.println("è¿™é‡Œæ¥äº†");
+		System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 		return ServiceUtil.PATH_RESULT;
 	}
-	
-	
-	//ÏÂÃæÊÇ¹¤¾ß·½·¨
+
+
+	//ä¸‹é¢æ˜¯å·¥å…·æ–¹æ³•
 	public void packingUser(int id ,String name,String password) {
 		User user = new User();
 		user.setId(id);
@@ -70,9 +70,9 @@ public class UserService {
 		user.setPassword(password);
 		this.user = user;
 	}
-		
+
 	public void ensureNotEmpty(HttpServletRequest request) throws Exception {
-		//ÏÈ»ñÈ¡ËùÓĞµÄ²ÎÊı
+		//å…ˆè·å–æ‰€æœ‰çš„å‚æ•°
 		String name=null;
 		int id = 0;
 		String password = null;
@@ -82,19 +82,19 @@ public class UserService {
 		if(!request.getParameter("name").equals("")) {
 			name = MyUtil.changeCoded(request.getParameter("name"));
 		}
-		
+
 		if(!request.getParameter("password").equals("")) {
 			password = request.getParameter("password");
 		}
-		
-		
+
+
 		System.out.println("id:"+id);
 		System.out.println("name:"+name);
 		System.out.println("pwd:"+password);
 		packingUser(id,name,password);
-		
+
 	}
-	
-	
+
+
 
 }

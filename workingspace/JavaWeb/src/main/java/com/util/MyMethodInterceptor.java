@@ -11,9 +11,9 @@ public class MyMethodInterceptor implements MethodInterceptor{
 
 
 	public Object intercept(Object obj, Method method, Object[] arg2, MethodProxy proxy) throws Throwable {
-		System.out.println("前置通知");
+		System.out.println("鍓嶇疆閫氱煡");
 		proxy.invokeSuper(obj,arg2);
-		System.out.println("后置通知");
+		System.out.println("鍚庣疆閫氱煡");
 		return null;
 	}
 

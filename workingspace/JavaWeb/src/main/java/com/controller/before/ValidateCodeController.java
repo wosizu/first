@@ -12,8 +12,6 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.apache.catalina.connector.Response;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,33 +24,33 @@ public class ValidateCodeController {
 	
 	@RequestMapping("/validateCode")
 	public void ValidateCode(HttpServletRequest request,HttpServletResponse response) throws Exception {
-		//ÉèÖÃÍ·²»»º´æ
+		//è®¾ç½®å¤´ä¸ç¼“å­˜
 		response.setHeader("Pragma", "No-cache");
 		response.setHeader("Cache-Control", "no-cache");
 		response.setDateHeader("Expires", 0);
 		
-		//ÉèÖÃMIMEÏìÓ¦ÀàĞÍ
+		//è®¾ç½®MIMEå“åº”ç±»å‹
 		response.setContentType("image/jpeg");
 		
-		//¹¹½¨Ò»¸öÍ¼Ïñ¶ÔÏó
+		//æ„å»ºä¸€ä¸ªå›¾åƒå¯¹è±¡
 		BufferedImage img = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		
-		//¹¹½¨Ò»¸ö×ÖÌå¶ÔÏó
+		//æ„å»ºä¸€ä¸ªå­—ä½“å¯¹è±¡
 		Font font = new Font("Arial",Font.TRUETYPE_FONT,18);
-		//µÃµ½»æÍ¼¶ÔÏó
+		//å¾—åˆ°ç»˜å›¾å¯¹è±¡
 		Graphics g = img.getGraphics();
-		//ĞÂ½¨Ëæ»úÊı¶ÔÏó
+		//è·å–ä¸€ä¸ªéšæœºæ•°å¯¹è±¡
 		Random rand = new Random();
-		//Í¨¹ı»æÍ¼¶ÔÏó»æÖÆ±³¾°É«
+		//Í¨é€šè¿‡ç»˜å¯¹è±¡ç»˜åˆ¶èƒŒæ™¯è‰²
 		g.setColor(new Color(rand.nextInt(55)+200,rand.nextInt(55)+200,rand.nextInt(55)+200));
-		//»æÖÆÒ»¸ö¾ØĞÎ
+		//ç»˜åˆ¶ä¸€ä¸ªçŸ©å½¢
 		g.fillRect(0, 0, WIDTH, HEIGHT);
-		//ÏÖÔÚÉèÖÃ×ÖÌå
+		//è®¾ç½®å­—ä½“
 		g.setFont(font);
-		//»æÖÆ±ß¿ò
+		//ç»˜åˆ¶è¾¹æ¡†
 		g.setColor(Color.BLUE);
 		g.drawRect(0, 0, WIDTH-1, HEIGHT-1);
-		//²úÉúËæ»úµÄÑéÖ¤Âë
+		//äº§ç”Ÿéšæœºçš„éªŒè¯ç 
 		String validate="";
 		int randInt = 0;
 		int[] validateSession = new int[4];
@@ -66,10 +64,10 @@ public class ValidateCodeController {
 			validateSession[i] = randInt;
 			validate += String.valueOf(randInt);
 		}
-		//°ÑÑéÖ¤Âë·ÅÈëµ½sessionÖĞ
+		//æŠŠéªŒè¯ç æ”¾å…¥åˆ°sessionä¸­
 		HttpSession session = request.getSession();
 		session.setAttribute("validate", validateSession);
-		//»æÖÆÑéÖ¤Âë
+		//ç»˜åˆ¶éªŒè¯ç 
 		g.drawString(validate, 6, 19);
 		OutputStream out = response.getOutputStream();
 		ImageIO.write(img, "JPEG", out);

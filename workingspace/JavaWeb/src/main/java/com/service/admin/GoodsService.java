@@ -29,43 +29,43 @@ import com.util.MyUtil;
 
 @Service
 public class GoodsService {
-	
+
 	@Autowired
 	GoodsDao dao;
 	CommonsMultipartFile file;
 	Goods goods;
-	
+
 	HttpServletRequest request;
-	
-	//Í¨¹ıÕâ¸ö·½·¨À´µ÷ÓÃÆäËû¼¸¸öÔöÉ¾¸Ä²éµÄ·½·¨£¬ÕâÑù¿ÉÒÔ¼õÉÙContorllerÀàµÄ´úÂë£¬°ÑÅĞ¶Ï·½·¨µÄÂß¼­Ò²·ÅÔÚÕâÀï
+
+	//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è°ƒç”¨å…¶ä»–å‡ ä¸ªå¢åˆ æ”¹æŸ¥çš„æ–¹æ³•ï¼Œè¿™æ ·å¯ä»¥å‡å°‘Contorllerç±»çš„ä»£ç ï¼ŒæŠŠåˆ¤æ–­æ–¹æ³•çš„é€»è¾‘ä¹Ÿæ”¾åœ¨è¿™é‡Œ
 	public String baseMethod(HttpServletRequest request,CommonsMultipartFile file) throws Exception {
-		
+
 		this.file = file;
 		this.request = request;
-		//Í¨¹ıÕâ¸ö·½·¨À´½øĞĞ·Ç¿ÕÅĞ¶Ï£¬È»ºóÖ±½Óµ÷ÓÃ´ò°ügoodsµÄ·½·¨
+		//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è¿›è¡Œéç©ºåˆ¤æ–­ï¼Œç„¶åç›´æ¥è°ƒç”¨æ‰“åŒ…goodsçš„æ–¹æ³•
 		this.ensureNotEmpty(request);
-		//Í¨¹ı·´ÉäÀ´µ÷ÓÃ·½·¨£¬ÕâÑùÀ´¼õÉÙif else
+		//é€šè¿‡åå°„æ¥è°ƒç”¨æ–¹æ³•ï¼Œè¿™æ ·æ¥å‡å°‘if else
 		String jsp = (String)this.getClass().getMethod(request.getParameter("method")+"Goods", Goods.class).invoke(this, this.goods);
 		return jsp;
 
 	}
-	
+
 	public String addGoods(Goods goods) {
 		try {
 			if(goods.getGoodstype_id() == 0 || goods.getName() == null || goods.getStore() == 0 || goods.getPrice() == 0.0|| goods.getPicture() == null) {
 				throw new LossInfoException();
 			}
-			 
-			
+
+
 			int changed = dao.addGoods(goods);
 			this.request.setAttribute("changed", changed);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-	
+
 	public String deleteGoods(Goods goods) {
 		try {
 			if(goods.getId() == 0) {
@@ -73,13 +73,13 @@ public class GoodsService {
 			}
 			int changed = dao.deleteGoods(goods.getId());
 			this.request.setAttribute("changed", changed);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-	
+
 	public String updateGoods(Goods goods) {
 		try {
 			if(goods.getId() == 0) {
@@ -87,13 +87,13 @@ public class GoodsService {
 			}
 			int changed = dao.updateGoods(goods);
 			this.request.setAttribute("changed", changed);
-			System.out.println("Ö´ĞĞÍê±Ï");
+			System.out.println("æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-	
+
 	public String queryGoods(Goods goods) {
 		try {
 			if(goods.getId() == 0) {
@@ -101,14 +101,14 @@ public class GoodsService {
 			}
 			goods = dao.queryGoods(goods.getId());
 			this.request.setAttribute("type", goods);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-	
-	//ÏÂÃæÊÇ¹¤¾ß·½·¨
+
+	//ä¸‹é¢æ˜¯å·¥å…·æ–¹æ³•
 	public void packingGoods(int id,String name,double price, int store, int goodstype_id) throws Exception {
 		Goods goods = new Goods();
 		goods.setId(id);
@@ -122,88 +122,88 @@ public class GoodsService {
 		}else {
 			goods.setPicture("");
 		}
-		
+
 		this.goods = goods;
 	}
-	
+
 	public void ensureNotEmpty(HttpServletRequest request) throws Exception {
-		
-		//ÏÈ»ñÈ¡ËùÓĞµÄ²ÎÊı
+
+		//å…ˆè·å–æ‰€æœ‰çš„å‚æ•°
 		String name = null;
 		double price = 0.0;
 		int store = 0;
 		int goodstype_id = 0;
 		int id = 0;
-		
-		
+
+
 		if(!request.getParameter("id").equals("")) {
 			id = Integer.valueOf(request.getParameter("id"));
 		}
-		
-		
+
+
 		if(!request.getParameter("name").equals("")) {
 			name = request.getParameter("name");
 		}
-		
+
 		if(!request.getParameter("price").equals("")) {
 			price = Double.valueOf(request.getParameter("price"));
 		}
-		
+
 		if(!request.getParameter("store").equals("")) {
 			store = Integer.valueOf(request.getParameter("store"));
 		}
 		if(!request.getParameter("goodstype_id").equals("")) {
 			goodstype_id = Integer.valueOf(request.getParameter("goodstype_id"));
 		}
-		
-		
+
+
 		System.out.println("id:"+id);
 		System.out.println("name:"+name);
 		System.out.println("price:"+price);
 		System.out.println("store:"+store);
 		System.out.println("goodstype:"+goodstype_id);
 		packingGoods(id,name,price,store,goodstype_id);
-		
+
 	}
-	
-	//±£´æÍ¼Æ¬µ½±¾µØ´ÅÅÌ
+
+	//ä¿å­˜å›¾ç‰‡åˆ°æœ¬åœ°ç£ç›˜
 	public String saveImage() throws IOException {
-		
+
 		try {
-			
+
 			if(this.file.getSize() != 0) {
 				InputStream in = this.file.getInputStream();
 				byte[] b = new byte[in.available()];
 				in.read(b);
 				String filename = file.getOriginalFilename();
-				
-				//»ñÈ¡Õâ¸öÍ¼Æ¬µÄºó×º
+
+				//è·å–è¿™ä¸ªå›¾ç‰‡çš„åç¼€
 				String[] realFilename = filename.split("\\.");
 				String head = realFilename[0];
 				String tail = realFilename[1];
-				//¹¹ÔìÒ»¸öĞÂµÄ¿ÉÒÔ±£Ö¤Î¨Ò»µÄÃû³Æ
+				//æ„é€ ä¸€ä¸ªæ–°çš„å¯ä»¥ä¿è¯å”¯ä¸€çš„åç§°
 				String random = String.valueOf(new Random().nextInt());
 				String time = String.valueOf(new Date().getTime());
 				String imgName = random+time+"."+tail;
 				System.out.println(imgName);
-				
+
 				OutputStream out = new FileOutputStream(request.getSession().getServletContext().getRealPath("/")+"img/before/"+imgName);
 				out.write(b);
-				//ÎÒÈ¥ËûµÄ¾ÍÊÇÒòÎªÕâÀïÃ»ÓĞcloseËùÒÔÃ¿´ÎÌí¼ÓµÄÍ¼Æ¬Ã»ÓĞĞ´½ø´ÅÅÌ½á¹û¶¼Ã»ÓĞÁË
+				//æˆ‘å»ä»–çš„å°±æ˜¯å› ä¸ºè¿™é‡Œæ²¡æœ‰closeæ‰€ä»¥æ¯æ¬¡æ·»åŠ çš„å›¾ç‰‡æ²¡æœ‰å†™è¿›ç£ç›˜ç»“æœéƒ½æ²¡æœ‰äº†
 				out.close();
 				in.close();
 				return imgName;
 			}else {
 				return null;
 			}
-			
+
 		}catch(Exception e) {
-			System.out.println("Í¼Æ¬´¦ÀíÓĞÎÊÌâ");
+			System.out.println("å›¾ç‰‡å¤„ç†æœ‰é—®é¢˜");
 			e.printStackTrace();
 			return null;
 		}
-		
+
 	}
-	
-	
+
+
 }

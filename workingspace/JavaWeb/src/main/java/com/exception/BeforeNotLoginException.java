@@ -3,7 +3,7 @@ package com.exception;
 public class BeforeNotLoginException extends Exception{
 	
 	public BeforeNotLoginException() {
-		super("ǰ̨�û�δ��½");
+		super("前台用户未登录");
 	}
 	 
 }

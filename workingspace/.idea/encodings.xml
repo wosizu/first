@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
     <file url="file://$PROJECT_DIR$/JavaWeb" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/controller/before/ValidateCodeController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/exception/AdminNotLoginException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/exception/BeforeNotLoginException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/exception/LossInfoException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/service/admin/GoodsService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/service/admin/NoticeService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/service/admin/OrderService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/service/admin/TypeService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/service/admin/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/service/before/QueryByType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/JavaWeb/src/main/java/com/util/MyMethodInterceptor.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

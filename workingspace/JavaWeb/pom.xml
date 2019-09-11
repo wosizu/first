@@ -125,13 +125,32 @@
 	    <artifactId>commons-io</artifactId>
 	    <version>2.4</version>
 	</dependency>
-	
-	
-	
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>4.0.1</version>
+      </dependency>
 
-    
+
+
+
   </dependencies>
   <build>
     <finalName>JavaWeb</finalName>
+      <!--  intelliJ ide 需要如下配置,才能读取src目录-->
+      <resources>
+          <!-- 表示编译java源码时，包含src/main/java和src/main/resources目录下的xml、properties一起 -->
+          <!--如果mapper.xml在src/main/java目录下，就必须做这个配置，不然编译后会丢弃mapper.xml文件-->
+          <resource>
+              <directory>src/main/java</directory>
+              <includes>
+                  <include>**/*.xml</include>
+                  <include>**/*.properties</include>
+              </includes>
+          </resource>
+
+      </resources>
+
+
   </build>
 </project>

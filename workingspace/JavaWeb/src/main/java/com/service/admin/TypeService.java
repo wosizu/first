@@ -13,105 +13,105 @@ import com.util.MyUtil;
 
 @Service
 public class TypeService {
-	
 
-		@Autowired
-		GoodsTypeDao dao;
-		
-		GoodsType type;
-		
-		HttpServletRequest request;
-		
-		//Í¨¹ıÕâ¸ö·½·¨À´µ÷ÓÃÆäËû¼¸¸öÔöÉ¾¸Ä²éµÄ·½·¨£¬ÕâÑù¿ÉÒÔ¼õÉÙContorllerÀàµÄ´úÂë£¬°ÑÅĞ¶Ï·½·¨µÄÂß¼­Ò²·ÅÔÚÕâÀï
-		public String baseMethod(HttpServletRequest request) throws Exception {
-			this.request = request;
-			//Í¨¹ıÕâ¸ö·½·¨À´½øĞĞ·Ç¿ÕÅĞ¶Ï£¬È»ºóÖ±½Óµ÷ÓÃ´ò°ügoodsµÄ·½·¨
-			this.ensureNotEmpty(request);
-			//Í¨¹ı·´ÉäÀ´µ÷ÓÃ·½·¨£¬ÕâÑùÀ´¼õÉÙif else
-			String jsp = (String)this.getClass().getMethod(request.getParameter("method")+"Type", GoodsType.class).invoke(this, this.type);
-			return jsp;
-		}
-		
-		public String addType(GoodsType type) {
-			try {
-				if(type.getTypename() == null) {
-					throw new LossInfoException();
-				}
-				int changed = dao.addType(type);
-				this.request.setAttribute("changed", changed);
-				System.out.println("·½·¨Ö´ĞĞÍê±Ï");
-				return ServiceUtil.PATH_RESULT;
-			}catch(Exception e) {
-				return ServiceUtil.PATH_ERROR;
+
+	@Autowired
+	GoodsTypeDao dao;
+
+	GoodsType type;
+
+	HttpServletRequest request;
+
+	//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è°ƒç”¨å…¶ä»–å‡ ä¸ªå¢åˆ æ”¹æŸ¥çš„æ–¹æ³•ï¼Œè¿™æ ·å¯ä»¥å‡å°‘Contorllerç±»çš„ä»£ç ï¼ŒæŠŠåˆ¤æ–­æ–¹æ³•çš„é€»è¾‘ä¹Ÿæ”¾åœ¨è¿™é‡Œ
+	public String baseMethod(HttpServletRequest request) throws Exception {
+		this.request = request;
+		//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è¿›è¡Œéç©ºåˆ¤æ–­ï¼Œç„¶åç›´æ¥è°ƒç”¨æ‰“åŒ…goodsçš„æ–¹æ³•
+		this.ensureNotEmpty(request);
+		//é€šè¿‡åå°„æ¥è°ƒç”¨æ–¹æ³•ï¼Œè¿™æ ·æ¥å‡å°‘if else
+		String jsp = (String)this.getClass().getMethod(request.getParameter("method")+"Type", GoodsType.class).invoke(this, this.type);
+		return jsp;
+	}
+
+	public String addType(GoodsType type) {
+		try {
+			if(type.getTypename() == null) {
+				throw new LossInfoException();
 			}
+			int changed = dao.addType(type);
+			this.request.setAttribute("changed", changed);
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
+			return ServiceUtil.PATH_RESULT;
+		}catch(Exception e) {
+			return ServiceUtil.PATH_ERROR;
 		}
-		
-		public String deleteType(GoodsType type) {
-			try{
-				if(type.getId() == 0) {
-					throw new LossInfoException();
-				}
-				int changed = dao.deleteType(type.getId());
-				this.request.setAttribute("changed", changed);
-				System.out.println("·½·¨Ö´ĞĞÍê±Ï");
-				return ServiceUtil.PATH_RESULT;
-			}catch(Exception e) {
-				return ServiceUtil.PATH_ERROR;
+	}
+
+	public String deleteType(GoodsType type) {
+		try{
+			if(type.getId() == 0) {
+				throw new LossInfoException();
 			}
+			int changed = dao.deleteType(type.getId());
+			this.request.setAttribute("changed", changed);
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
+			return ServiceUtil.PATH_RESULT;
+		}catch(Exception e) {
+			return ServiceUtil.PATH_ERROR;
 		}
-	////	
-		public String updateType(GoodsType type) {
-			try {
-				if(type.getId() == 0) {
-					throw new LossInfoException();
-				}
-				int changed = dao.updateType(type);
-				this.request.setAttribute("changed", changed);
-				System.out.println("Ö´ĞĞÍê±Ï");
-				return ServiceUtil.PATH_RESULT; 
-			}catch(Exception e) {
-				return ServiceUtil.PATH_ERROR;
+	}
+	////
+	public String updateType(GoodsType type) {
+		try {
+			if(type.getId() == 0) {
+				throw new LossInfoException();
 			}
+			int changed = dao.updateType(type);
+			this.request.setAttribute("changed", changed);
+			System.out.println("æ‰§è¡Œå®Œæ¯•");
+			return ServiceUtil.PATH_RESULT;
+		}catch(Exception e) {
+			return ServiceUtil.PATH_ERROR;
 		}
-	////	
-		public String queryType(GoodsType type) {
-			try{
-				if(type.getId() == 0) {
-					throw new LossInfoException();
-				}
-				type = dao.queryType(type.getId());
-				this.request.setAttribute("type", type);
-				System.out.println("·½·¨Ö´ĞĞÍê±Ï");
-				return ServiceUtil.PATH_RESULT;
-			}catch(Exception e) {
-				return ServiceUtil.PATH_ERROR;
+	}
+	////
+	public String queryType(GoodsType type) {
+		try{
+			if(type.getId() == 0) {
+				throw new LossInfoException();
 			}
+			type = dao.queryType(type.getId());
+			this.request.setAttribute("type", type);
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
+			return ServiceUtil.PATH_RESULT;
+		}catch(Exception e) {
+			return ServiceUtil.PATH_ERROR;
 		}
-	//	
-		//ÏÂÃæÊÇ¹¤¾ß·½·¨
-		public void packingType(int id,String typename) {
-			
-			GoodsType type = new GoodsType();
-			type.setId(id);
-			type.setTypename(typename);
-			this.type = type;
+	}
+	//
+	//ä¸‹é¢æ˜¯å·¥å…·æ–¹æ³•
+	public void packingType(int id,String typename) {
+
+		GoodsType type = new GoodsType();
+		type.setId(id);
+		type.setTypename(typename);
+		this.type = type;
+	}
+
+	public void ensureNotEmpty(HttpServletRequest request) throws Exception {
+		//å…ˆè·å–æ‰€æœ‰çš„å‚æ•°
+		int id = 0;
+		String typename=null;
+		if(!request.getParameter("id").equals("")) {
+			id = Integer.valueOf(request.getParameter("id"));
 		}
-		
-		public void ensureNotEmpty(HttpServletRequest request) throws Exception {
-			//ÏÈ»ñÈ¡ËùÓĞµÄ²ÎÊı
-			int id = 0;
-			String typename=null;
-			if(!request.getParameter("id").equals("")) {
-				id = Integer.valueOf(request.getParameter("id"));
-			}
-			if(!request.getParameter("typename").equals("")) {
-				typename = MyUtil.changeCoded(request.getParameter("typename"));
-			}
-			
-			System.out.println("id:"+id);
-			System.out.println("typename:"+typename);
-			packingType(id,typename);
+		if(!request.getParameter("typename").equals("")) {
+			typename = MyUtil.changeCoded(request.getParameter("typename"));
 		}
-		
-		
+
+		System.out.println("id:"+id);
+		System.out.println("typename:"+typename);
+		packingType(id,typename);
+	}
+
+
 }

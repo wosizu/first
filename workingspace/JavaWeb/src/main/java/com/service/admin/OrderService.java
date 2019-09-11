@@ -14,39 +14,41 @@ import com.util.MyUtil;
 
 @Service
 public class OrderService {
-	
+
 	@Autowired
 	OrderDao dao;
-		
-		
+
+
 	Order order;
-	
+
 	HttpServletRequest request;
-	
-	//Í¨¹ıÕâ¸ö·½·¨À´µ÷ÓÃÆäËû¼¸¸öÔöÉ¾¸Ä²éµÄ·½·¨£¬ÕâÑù¿ÉÒÔ¼õÉÙContorllerÀàµÄ´úÂë£¬°ÑÅĞ¶Ï·½·¨µÄÂß¼­Ò²·ÅÔÚÕâÀï
+
+	//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è°ƒç”¨å…¶ä»–å‡ ä¸ªå¢åˆ æ”¹æŸ¥çš„æ–¹æ³•ï¼Œè¿™æ ·å¯ä»¥å‡å°‘Contorllerç±»çš„ä»£ç ï¼ŒæŠŠåˆ¤æ–­æ–¹æ³•çš„é€»è¾‘ä¹Ÿæ”¾åœ¨è¿™é‡Œ
 	public String baseMethod(HttpServletRequest request) throws Exception {
 		this.request = request;
-		//Í¨¹ıÕâ¸ö·½·¨À´½øĞĞ·Ç¿ÕÅĞ¶Ï£¬È»ºóÖ±½Óµ÷ÓÃ´ò°ügoodsµÄ·½·¨
+		//é€šè¿‡è¿™ä¸ªæ–¹æ³•æ¥è¿›è¡Œéç©ºåˆ¤æ–­ï¼Œç„¶åç›´æ¥è°ƒç”¨æ‰“åŒ…goodsçš„æ–¹æ³•
 		this.ensureNotEmpty(request);
-		//Í¨¹ı·´ÉäÀ´µ÷ÓÃ·½·¨£¬ÕâÑùÀ´¼õÉÙif else
+		//é€šè¿‡åå°„æ¥è°ƒç”¨æ–¹æ³•ï¼Œè¿™æ ·æ¥å‡å°‘if else
 		String jsp = (String)this.getClass().getMethod(request.getParameter("method")+"Order", Order.class).invoke(this, this.order);
 		return jsp;
 	}
-	
+
 	public String addOrder(Order order) {
+
 		try {
-			if(order.getId() == 0 || order.getAmount() == 0 || order.getOrderdate() == null || order.getStatus() == null || order.getUser_id() == 0) {
+			if(order.getAmount() == 0 || order.getOrderdate() == null || order.getStatus() == null || order.getUser_id() == 0) {
 				throw new LossInfoException();
 			}
+
 			int changed = dao.addOrder(order);
 			this.request.setAttribute("changed", changed);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-	
+
 	public String deleteOrder(Order order) {
 		try {
 			if(order.getId() == 0) {
@@ -54,46 +56,50 @@ public class OrderService {
 			}
 			int changed = dao.deleteOrder(order.getId());
 			this.request.setAttribute("changed", changed);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-////	
+	////
 	public String updateOrder(Order order) {
+
 		try {
 			if(order.getId() == 0) {
+
 				throw new LossInfoException();
 			}
+
 			int changed = dao.updateOrder(order);
 			this.request.setAttribute("changed", changed);
-			System.out.println("Ö´ĞĞÍê±Ï");
-			return ServiceUtil.PATH_RESULT;
-		}catch(Exception e) {
-			return ServiceUtil.PATH_ERROR;
-		}
-	}
-////	
-	public String queryOrder(Order order) {
-		try {
-			
-			if(order.getId() == 0) {
-				throw new LossInfoException();
-			}
-			
-			order = dao.queryOrder(order.getId());
-			
-			this.request.setAttribute("type", order);
-			System.out.println("·½·¨Ö´ĞĞÍê±Ï");
+			System.out.println("æ‰§è¡Œå®Œæ¯•");
 			return ServiceUtil.PATH_RESULT;
 		}catch(Exception e) {
 			e.printStackTrace();
 			return ServiceUtil.PATH_ERROR;
 		}
 	}
-//	
-	//ÏÂÃæÊÇ¹¤¾ß·½·¨
+	////
+	public String queryOrder(Order order) {
+		try {
+
+			if(order.getId() == 0) {
+				throw new LossInfoException();
+			}
+
+			order = dao.queryOrder(order.getId());
+
+			this.request.setAttribute("type", order);
+			System.out.println("æ–¹æ³•æ‰§è¡Œå®Œæ¯•");
+			return ServiceUtil.PATH_RESULT;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return ServiceUtil.PATH_ERROR;
+		}
+	}
+	//
+	//ä¸‹é¢æ˜¯å·¥å…·æ–¹æ³•
 	public void packingOrder(int id,int user_id,int amount,String status) {
 		Order order = new Order();
 		order.setId(id);
@@ -103,14 +109,14 @@ public class OrderService {
 		order.setOrderdate(MyUtil.getTime());
 		this.order = order;
 	}
-	
+
 	public void ensureNotEmpty(HttpServletRequest request) throws Exception {
-		//ÏÈ»ñÈ¡ËùÓĞµÄ²ÎÊı
+		//å…ˆè·å–æ‰€æœ‰çš„å‚æ•°
 		int usertable_id=0;
 		int amount = 0;
 		int id = 0;
 		String status=null;
-		
+
 		if(!request.getParameter("id").equals("")) {
 			id = Integer.valueOf(request.getParameter("id"));
 		}
@@ -123,16 +129,16 @@ public class OrderService {
 		if(!request.getParameter("amount").equals("")) {
 			amount = Integer.valueOf(request.getParameter("amount"));
 		}
-		
-		
-		
+
+
+
 		System.out.println("id:"+id);
 		System.out.println("amount:"+amount);
 		System.out.println("usertable_id:"+usertable_id);
-		
+
 		packingOrder(id,usertable_id,amount,status);
-		
+
 	}
-	
+
 
 }

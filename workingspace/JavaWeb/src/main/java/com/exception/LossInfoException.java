@@ -3,6 +3,6 @@ package com.exception;
 public class LossInfoException extends Exception{
 
 	public LossInfoException() {
-		super("ÊäÈëµÄĞÅÏ¢²»È«");
+		super("è¾“å…¥çš„ä¿¡æ¯ä¸å…¨");
 	}
 }

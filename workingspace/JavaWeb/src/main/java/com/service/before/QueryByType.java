@@ -14,13 +14,13 @@ import com.service.ServiceUtil;
 
 @Service
 public class QueryByType {
-	
+
 	@Autowired
 	QueryByTypeDao dao;
-	
+
 	public String query(HttpServletRequest request) {
-		
-		//保存当前是第几页
+
+		//淇濆瓨褰撳墠鏄鍑犻〉
 		HttpSession session = request.getSession();
 		int nonius = 0;
 		List<Goods> goodsList;
@@ -33,15 +33,15 @@ public class QueryByType {
 			goodsList = dao.query(typeId,nonius);
 			session.setAttribute("nonius", nonius=nonius+11);
 		}
-		
+
 		if(goodsList.size() > 0) {
 			request.setAttribute("goodsList", goodsList);
-			
+
 			return ServiceUtil.PATH_SERACH;
 		}else {
 			return ServiceUtil.PATH_ERROR;
 		}
-		
+
 	}
-	
+
 }

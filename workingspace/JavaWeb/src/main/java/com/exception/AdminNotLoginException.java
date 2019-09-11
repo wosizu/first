@@ -3,7 +3,7 @@ package com.exception;
 public class AdminNotLoginException extends Exception{
 	
 	public AdminNotLoginException() {
-		super("管理员用户未登陆");
+		super("绠＄悊鍛樼敤鎴锋湭鐧诲綍");
 	}
 	
 }

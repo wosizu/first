@@ -1,23 +1,12 @@
 package com.controller.admin;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.catalina.core.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
-import com.dao.admin.GoodsDao;
-import com.entity.Goods;
 import com.service.admin.GoodsService;
 
 @Controller
@@ -31,19 +20,19 @@ public class GoodsController {
 	@RequestMapping("/admin/Goods")
 	public String goods(@RequestParam("picture") CommonsMultipartFile file ,HttpServletRequest request) throws Exception {
 		
-		//ÖØ¹¹ºóÕâÀïÌ«¸É¾»ÁË£¬ÍêÃÀ
-		System.out.println("¿ªÊ¼ÈÆÈ¦");
+		//è¿™å°±æ˜¯é‡æ„åçš„ä»£ç 
+		System.out.println("å¼€å§‹ç»•åœˆ");
 		String jsp = service.baseMethod(request,file);
-		System.out.println("ÈÆÈ¦½áÊø");
+		System.out.println("ç»“æŸç»•åœˆ");
 		
 		
-//		//»ñÈ¡ÎÄ¼şÃû
+//		è·å–æ–‡ä»¶å
 //		String name = file.getOriginalFilename();
 //		InputStream in = file.getInputStream();
 //		byte[] img = new byte[in.available()];
 //		in.read(img);
 //		
-//		//»ñÈ¡±£´æÂ·¾¶
+//		è·å–ä¿å­˜è·¯å¾„
 //		File file2 = new File(request.getSession().getServletContext().getRealPath("/")+"/img/"+name);
 //		file2.createNewFile();
 //		OutputStream out = new FileOutputStream(file2);

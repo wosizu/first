@@ -18,17 +18,17 @@ public class AdminLoginInterceptor implements HandlerInterceptor  {
 	public static final int COOKIE_MAX_AGE = 60 * 30;
 	public static final String PARAMETER_USERNAME = "auser";
 	public static final String PARAMETER_PASSWORD = "password";
-	public static final String PATH_LOGIN = "admin/login";
+	public static final String PATH_LOGIN = "/JavaWeb/admin/login";
 	public static final String auser = "auser";
 	public static final String COOKIE_PATH = "/JavaWeb/admin";
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
-			//ÕâÀïÖ¸¶¨ÁËÇ°¶Ë´«Èë±ØĞëÒÔauserÎªname
+			//è¿™é‡ŒæŒ‡å®šäº†å‰ç«¯ä¼ å…¥å¿…é¡»ä»¥auserä¸ºname
 //			String auser = request.getParameter(PARAMETER_USERNAME);
 			
 			
-			//ÕâÀï½øĞĞÁËÔ¤²éÑ¯
+			//è¿™é‡Œè¿›è¡Œäº†é¢„æŸ¥è¯¢
 			String cookiePwd = this.getCookiePwd(request, auser);
 			String sessionPwd = this.getSessionPwd(request, auser);
 	
@@ -36,47 +36,46 @@ public class AdminLoginInterceptor implements HandlerInterceptor  {
 			if(cookiePwd != null && sessionPwd != null) {
 				
 				if(cookiePwd.equals(sessionPwd)) {
-					System.out.println("ÃÜÂëÕıÈ·£¬Á¢¼´Ìø×ª");
+					System.out.println("å¯†ç æ­£ç¡®ï¼Œç«‹å³è·³è½¬");
 					request.setAttribute("auser", auser);
 					return true;
 					
 				}else {
-					System.out.println("ÃÜÂë²»ÕıÈ·£¬·µ»ØµÇÂ½Ò³Ãæ");
+					System.out.println("å¯†ç é”™è¯¯ï¼Œè¿”å›ç™»é™†é¡µé¢");
 					response.sendRedirect(PATH_LOGIN);
-					System.out.println("·µ»Øµ½µÇÂ½Ò³ÃæÁË");
 					return false;
 				}
 				
 			}else if(cookiePwd != null && sessionPwd ==null) {
 				
-				//Ã»ÓĞsession£¬¾Í´ÓÊı¾İ¿âÖĞ²éÑ¯
+				//æ²¡æœ‰sessionå°±ä»æ•°æ®åº“ä¸­æŸ¥è¯¢
 				sessionPwd = this.queryDatabase(auser);
 				if(sessionPwd.equals(cookiePwd)) {
-					System.out.println("ÃÜÂëÕıÈ·£¬¼ÌĞøÖ´ĞĞ");
+					System.out.println("å¯†ç æ­£ç¡®ï¼Œç»§ç»­æ‰§è¡Œ");
 					request.getSession().setAttribute(auser, sessionPwd);
-					System.out.println("sessionÉèÖÃÍê±Ï");
-					//ÕâÀïÒ²ÊÇ¸öËÀ´úÂë
+					System.out.println("sessionè®¾ç½®å®Œæ¯•");
+					//è¿™é‡Œä¹Ÿæ˜¯ä¸ªæ­»ä»£ç 
 					request.setAttribute("auser", auser);
-					System.out.println("adminÓÃ»§ÃûÉèÖÃÍê³É");
+					System.out.println("adminç”¨æˆ·åè®¾ç½®å®Œæ¯•");
 					return true;
 				}else {
-					System.out.println("ÃÜÂë´íÎó£¬·µ»ØµÇÂ½Ò³Ãæ");
+					System.out.println("å¯†ç é”™è¯¯è¿”å›ç™»é™†é¡µé¢");
 					response.sendRedirect(PATH_LOGIN);
 					return false;
 				}
 				
 			}else if(cookiePwd == null && sessionPwd == null) {
 				
-				//ÅĞ¶ÏÊÇ·ñ´ø×ÅÃÜÂëÓëÓÃ»§Ãû
-				System.out.println("Ã»ÓĞµÇÂ½¹ı,½«½øĞĞ±íµ¥ÓëÊı¾İ¿âÆ¥Åä!");
-				//ÕâÀïÒ²ÊÇËÀ´úÂë±ØĞëÊÇpassword
+				//åˆ¤æ–­æ˜¯å¦å¸¦ç€ç”¨æˆ·åä¸å¯†ç 
+				System.out.println("æ²¡æœ‰ç™»é™†è¿‡ï¼Œå°†è¿›è¡Œè¡¨å•ä¸æ•°æ®åº“åŒ¹é…");
+				//è¿™é‡Œçš„passwordä¹Ÿæ˜¯æ­»ä»£ç 
 				if(request.getParameter(auser) != null && request.getParameter(PARAMETER_PASSWORD) != null) {
 					String password = this.queryDatabase(auser);
 					
 					
-					//ÅĞ¶ÁÊÇ·ñÕıÈ·.....ÕâÀïÓÃÒÑÖª×Ö·û´®À´Æ¥ÅäÎ´ÖªµÄ¿ÉÒÔ±ÜÃâ¿ÕÖ¸ÕëÒì³£,,Èı¸öifµÄÇ¶Ì×ÓĞµãÀ¬»ø´úÂëµÄÒâË¼ÁË
+					//åˆ¤æ–­æ˜¯å¦æ­£ç¡®ï¼Œä¸‰ä¸ªifåº”è¯¥æ˜¯å¯ä»¥è¿›è¡Œä¼˜åŒ–çš„
 					if(auser.equals(request.getParameter("auser")) && request.getParameter("password").equals(password)) {
-						System.out.println("ÃÜÂëÆ¥ÅäÕıÈ·£¬ÔÊĞí¼ÌĞø·ÃÎÊ");
+						System.out.println("å¯†ç åŒ¹é…æ­£ç¡®ï¼Œå…è®¸ç»§ç»­æ‰§è¡Œ");
 						Cookie[] cookieArray = request.getCookies();
 						
 						Cookie cookie = new Cookie("JSESSIONID",request.getSession().getId());
@@ -87,26 +86,26 @@ public class AdminLoginInterceptor implements HandlerInterceptor  {
 						cookie = new Cookie(auser,password);
 						cookie.setMaxAge(COOKIE_MAX_AGE);
 						cookie.setPath(COOKIE_PATH);
-						System.out.println("cookie max age£º30·ÖÖÓ");
+						System.out.println("cookie max age 30 åˆ†é’Ÿ");
 						response.addCookie(cookie);
-						System.out.println("cookieÉèÖÃÍê±Ï");
+						System.out.println("cookieè®¾ç½®å®Œæ¯•");
 						
 						HttpSession session = request.getSession();
 						session.setAttribute(auser, password);
-						System.out.println("sessionÉèÖÃ³É¹¦");
+						System.out.println("sessionå®Œæ¯•");
 						request.setAttribute("auser", auser);
-						System.out.println("µÇÂ½ÃûÉèÖÃÍê±Ï");
+						System.out.println("ç™»é™†åè®¾ç½®å®Œæ¯•");
 						return true;
 					}else {
 						System.out.println("username:"+request.getParameter(PARAMETER_USERNAME));
 						System.out.println("password:"+request.getParameter(PARAMETER_PASSWORD));
-						System.out.println("±íµ¥ÃÜÂëÆ¥Åä´íÎó£¬·µ»ØµÇÂ½Ò³Ãæ");
+						System.out.println("è¡¨å•å¯†ç åŒ¹é…é”™è¯¯ï¼Œè¿”å›ç™»é™†é¡µé¢");
 						response.sendRedirect(PATH_LOGIN);						
 						return false;
 					}
 				}else{
 					
-					System.out.println("±íµ¥Êı¾İÊÇ¿ÕµÄ£¬×ª·¢µ½µÇÂ½Ò³Ãæ");
+					System.out.println("è¡¨å•æ•°æ®æ˜¯ç©ºçš„ï¼Œè¿”å›ç™»é™†é¡µé¢");
 					response.sendRedirect(PATH_LOGIN);
 					return false;
 				}
@@ -114,7 +113,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor  {
 			}else if(cookiePwd == null && sessionPwd != null) {
 				
 				if(auser.equals(request.getParameter("auser")) && request.getParameter("password").equals(sessionPwd)) {
-					System.out.println("ÃÜÂëÆ¥ÅäÕıÈ·£¬ÔÊĞí¼ÌĞø·ÃÎÊ");
+					System.out.println("å¯†ç åŒ¹é…æ­£ç¡®ï¼Œå…è®¸ç»§ç»­æ‰§è¡Œ");
 					Cookie[] cookieArray = request.getCookies();
 					
 					Cookie cookie = new Cookie("JSESSIONID",request.getSession().getId());
@@ -125,17 +124,17 @@ public class AdminLoginInterceptor implements HandlerInterceptor  {
 					cookie = new Cookie(auser,"1234");
 					cookie.setPath(COOKIE_PATH);
 					cookie.setMaxAge(COOKIE_MAX_AGE);
-					System.out.println("cookie max age£º30·ÖÖÓ");
+					System.out.println("cookie max age 30 åˆ†é’Ÿ");
 					response.addCookie(cookie);
-					System.out.println("cookieÉèÖÃÍê±Ï");
+					System.out.println("cookieè®¾ç½®å®Œæ¯•");
 					
 					request.setAttribute("auser", auser);
-					System.out.println("µÇÂ½ÃûÉèÖÃÍê±Ï");
+					System.out.println("ç™»å½•åè®¾ç½®å®Œæ¯•");
 					return true;
 				}else {
 					System.out.println("username:"+request.getParameter(PARAMETER_USERNAME));
-					System.out.println("password"+request.getParameter(PARAMETER_PASSWORD));
-					System.out.println("±íµ¥ÃÜÂëÆ¥Åä´íÎó£¬·µ»ØµÇÂ½Ò³Ãæ");
+					System.out.println("password:"+request.getParameter(PARAMETER_PASSWORD));
+					System.out.println("è¡¨å•å¯†ç åŒ¹é…é”™è¯¯ï¼Œè¿”å›ç™»é™†é¡µé¢");
 					response.sendRedirect(PATH_LOGIN);						
 					return false;
 				}
@@ -160,7 +159,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor  {
 	
 	
 	
-	//»ñÈ¡cookieÖĞ±£´æµÄÃÜÂë
+	//è·å–cookieä¸­ä¿å­˜çš„å¯†ç 
 		public String getCookiePwd(HttpServletRequest request,String cookieName) {
 			
 			Cookie[] cookie = request.getCookies();
@@ -170,17 +169,17 @@ public class AdminLoginInterceptor implements HandlerInterceptor  {
 				for(Cookie c:cookie){
 					if(c.getName().equals(cookieName)) {
 						cookiePwd = c.getValue();
-						//²éÑ¯µ½¾ÍÖ±½Ó·µ»ØÕâ¸öÖµ
+						//æŸ¥è¯¢åˆ°å°±ç›´æ¥è¿”å›è¿™ä¸ªå€¼
 						return cookiePwd;
 					}
 				}
 			}
-			//Ö´ĞĞµ½ÕâÀï¾ÍËµÃ÷Ã»ÓĞÔÚ¿Í»§¶Ë»º´æÀï²éÑ¯µ½ËùÒÔ·µ»Ønull
+			//Ö´æ²¡æœ‰æŸ¥åˆ°cookieå°±è¿”å›null
 			return null;
 			
 		}
 		
-		//»ñÈ¡sessionÖĞ±£´æµÄÃÜÂë
+		//è·å–sessionä¸­ä¿å­˜çš„å¯†ç 
 		public String getSessionPwd(HttpServletRequest request,String sessionName) {
 			
 			HttpSession session = request.getSession();
@@ -196,7 +195,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor  {
 			
 		}
 		
-		//´ÓÊı¾İ¿â²éÊı¾İ
+		//ä»æ•°æ®åº“æŸ¥è¯¢æ•°æ®
 		public String queryDatabase(String name) throws Exception {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ectest?serverTimezone=GMT%2B8", "root", "123456");
