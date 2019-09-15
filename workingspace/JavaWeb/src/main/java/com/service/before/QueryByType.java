@@ -39,6 +39,8 @@ public class QueryByType {
 
 			return ServiceUtil.PATH_SERACH;
 		}else {
+			System.out.println("这里来了");
+			session.setAttribute("nonius",0);
 			return ServiceUtil.PATH_ERROR;
 		}
 

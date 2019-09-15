@@ -147,9 +147,10 @@
 							<form action="http://localhost:8080/JavaWeb/admin/CRUD" method="post">
 								<div>
 									<input type="text" placeholder="id" name="id"/>
-									<input type="text" placeholder="usertable_id" name="usertable_id" />
+									<input type="text" placeholder="user_id" name="user_id" />
 									<input type="text" placeholder="amount" name="amount"/>
 									<input type="text" placeholder="status" name="status" />
+									<input type="text" placeholder="goods_id" name="goods_id" />
 									
 								</div>
 								

@@ -27,7 +27,7 @@
 		<div class="row">
 			<c:forEach  var="goods" items="${goodsList}" >
 				<div class="col-md-3">
-					<img class="img-fluid"  src="http://localhost:8080/JavaWeb/img/before/${goods.picture}" />
+					<a href="http://localhost:8080/JavaWeb/before/goods?goodsId=${goods.id}"><img class="img-fluid"  src="http://localhost:8080/JavaWeb/img/before/${goods.picture}" /></a>
 				</div>
 			</c:forEach>
 			

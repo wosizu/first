@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.service.before.QueryByType;
 
-@Controller
-public class TypeController {
+@Controller("beforeGoodsTypeController")
+public class GoodsTypeController {
 	
 	@Autowired
 	QueryByType service;

@@ -102,6 +102,13 @@
             <mvc:exclude-mapping path="/css/admin/**" /> -->
             <bean class="com.controller.admin.AdminLoginInterceptor"/>
         </mvc:interceptor>
+
+
+        <mvc:interceptor>
+            <mvc:mapping path="/before/**"/>
+            <mvc:exclude-mapping path="/before/login"/>
+            <bean class="com.controller.before.BeforeLoginInterceptor" />
+        </mvc:interceptor>
     </mvc:interceptors>
     
     <!-- 配置文件上传解析器 -->

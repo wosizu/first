@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.service.admin.TypeService;
 
 
-@Controller
+@Controller("adminGoodsTypeController")
 public class GoodsTypeController {
 	
 	

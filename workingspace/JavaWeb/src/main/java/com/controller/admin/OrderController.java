@@ -10,7 +10,7 @@ import com.service.admin.NoticeService;
 import com.service.admin.OrderService;
 
 
-@Controller
+@Controller("adminOrderController")
 public class OrderController {
 	@Autowired
 	OrderService service;

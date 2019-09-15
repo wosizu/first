@@ -36,7 +36,7 @@ public class OrderService {
 	public String addOrder(Order order) {
 
 		try {
-			if(order.getAmount() == 0 || order.getOrderdate() == null || order.getStatus() == null || order.getUser_id() == 0) {
+			if(order.getAmount() == 0 || order.getOrderdate() == null || order.getStatus() == null || order.getUser_id() == 0 || order.getGoods_id() == 0) {
 				throw new LossInfoException();
 			}
 
@@ -112,7 +112,7 @@ public class OrderService {
 
 	public void ensureNotEmpty(HttpServletRequest request) throws Exception {
 		//先获取所有的参数
-		int usertable_id=0;
+		int user_id=0;
 		int amount = 0;
 		int id = 0;
 		String status=null;
@@ -123,8 +123,8 @@ public class OrderService {
 		if(!request.getParameter("status").equals("")) {
 			status = MyUtil.changeCoded(request.getParameter("status"));
 		}
-		if(!request.getParameter("usertable_id").equals("")) {
-			usertable_id = Integer.valueOf(request.getParameter("usertable_id"));
+		if(!request.getParameter("user_id").equals("")) {
+			user_id = Integer.valueOf(request.getParameter("user_id"));
 		}
 		if(!request.getParameter("amount").equals("")) {
 			amount = Integer.valueOf(request.getParameter("amount"));
@@ -134,9 +134,9 @@ public class OrderService {
 
 		System.out.println("id:"+id);
 		System.out.println("amount:"+amount);
-		System.out.println("usertable_id:"+usertable_id);
+		System.out.println("usertable_id:"+user_id);
 
-		packingOrder(id,usertable_id,amount,status);
+		packingOrder(id,user_id,amount,status);
 
 	}
 

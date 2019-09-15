@@ -8,6 +8,16 @@ public class Order {
 	private int amount;
 	private String status;
 	private String orderdate;
+	private int goods_id;
+
+	public int getGoods_id() {
+		return goods_id;
+	}
+
+	public void setGoods_id(int goods_id) {
+		this.goods_id = goods_id;
+	}
+
 	public int getId() {
 		return id;
 	}
